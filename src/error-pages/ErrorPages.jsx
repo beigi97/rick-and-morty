@@ -1,7 +1,6 @@
 import React from "react";
 import { useRouteError, Link } from "react-router-dom";
 import DarkModeToggle from "../components/DarkModeToggle";
-import { Button } from "flowbite-react";
 
 export default function ErrorPage() {
   const error = useRouteError();
@@ -27,9 +26,9 @@ export default function ErrorPage() {
           <div className="flex justify-center">
             <Link
               to="/"
-              className="px-6 py-2 bg-secondary hover:bg-secondary-dark dark:bg-secondary-dark dark:hover:opacity-90 text-white rounded-lg transition-all duration-200"
+              className="px-6 py-2 bg-secondary-default hover:bg-secondary-dark dark:bg-secondary-default dark:hover:bg-secondary-third text-white rounded-lg transition-all duration-200"
             >
-              <Button>Go Home</Button>
+              Go Home
             </Link>
           </div>
         </div>

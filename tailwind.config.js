@@ -12,6 +12,7 @@ export default {
         secondary: {
           default: "#11B0C8",
           dark: "#0D8A9E",
+          third: "#0B6F82",
         },
       },
       fontFamily: {
