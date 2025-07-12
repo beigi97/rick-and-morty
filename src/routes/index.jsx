@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "./root";
 import ErrorPage from "../error-pages/ErrorPages";
 import Home, { loader as homeLoader } from "./Home";
+import PersonagensList, {
+  loader as personagensListLoader,
+} from "./PersonagensList";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +18,12 @@ export const router = createBrowserRouter([
         loader: homeLoader,
       },
     ],
+  },
+  {
+    path: "/personagens",
+    element: <PersonagensList />,
+    errorElement: <ErrorPage />,
+    loader: personagensListLoader,
   },
 ]);
 export default router;
