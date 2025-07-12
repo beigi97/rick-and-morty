@@ -8,6 +8,13 @@ export const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+        loader: homeLoader,
+      },
+    ],
   },
 ]);
 export default router;
