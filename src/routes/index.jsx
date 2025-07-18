@@ -5,6 +5,7 @@ import Home, { loader as homeLoader } from "./Home";
 import PersonagensList, {
   loader as personagensListLoader,
 } from "./PersonagensList";
+import EpisodeList, { loader as EpisodeListLoader } from "./EpisodeList";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,11 @@ export const router = createBrowserRouter([
     element: <PersonagensList />,
     errorElement: <ErrorPage />,
     loader: personagensListLoader,
+  },
+  {
+    path: "/episodes",
+    element: <EpisodeList />,
+    loader: EpisodeListLoader,
   },
 ]);
 export default router;
