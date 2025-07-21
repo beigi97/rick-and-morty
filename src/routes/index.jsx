@@ -6,6 +6,7 @@ import PersonagensList, {
   loader as personagensListLoader,
 } from "./PersonagensList";
 import EpisodeList, { loader as EpisodeListLoader } from "./EpisodeList";
+import LocationList, { loader as locationListLoader } from "./LocationList";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,11 @@ export const router = createBrowserRouter([
     path: "/episodes",
     element: <EpisodeList />,
     loader: EpisodeListLoader,
+  },
+  {
+    path: "/locations",
+    element: <LocationList />,
+    loader: locationListLoader,
   },
 ]);
 export default router;
