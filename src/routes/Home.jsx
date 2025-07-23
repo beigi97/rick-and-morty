@@ -1,10 +1,11 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigation } from "react-router-dom";
 import { getFirstPageCharacters } from "../api/getFirstPageCharacters";
 import PersonagensCardList from "../components/PersonagensCardList";
 import { getFirstPageEpisodes } from "../api/getFirstPageEpisodes";
 import EpisodeCardList from "../components/EpisodeCardList";
-import { getFirstPageLocations } from "../api/get FirstPageLocations";
+import { getFirstPageLocations } from "../api/getFirstPageLocations";
 import LocationCardList from "../components/LocationCardList";
+import { Spinner } from "flowbite-react";
 
 export async function loader() {
   const charactersData = await getFirstPageCharacters();
@@ -22,6 +23,9 @@ export default function Home() {
   const visibleCharacters = characters.slice(0, 8);
   const visibleEpisodes = episodes.slice(0, 5);
   const visibleLocations = locations.slice(0, 7);
+  const navigation = useNavigation();
+
+  const isLoading = navigation.state === "loading";
 
   return (
     <div className="min-h-screen p-4">
