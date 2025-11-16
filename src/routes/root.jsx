@@ -1,9 +1,19 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import DarkModeToggle from "../components/DarkModeToggle";
+import { Spinner } from "flowbite-react";
 
 export default function Root() {
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+
   return (
     <div className="min-h-screen bg-white dark:bg-blackB text-dark dark:text-white ">
+      {isLoading && (
+        <div className="fixed inset-0 z-50 bg-white dark:bg-blackA flex justify-center items-center">
+          <p className="font-lobester mr-2">Loading ...</p>
+          <Spinner color="info" aria-label="Info spinner example" size="xl" />
+        </div>
+      )}
       <header className="px-8 py-16 max-w-7xl mx-auto">
         <img src="src/assets/imgs/LogoA.svg" alt="logo" className=" mb-4" />
         <nav className="flex flex-col-reverse lg:flex-row items-center justify-between">
@@ -27,7 +37,7 @@ export default function Root() {
             </p>
           </div>
 
-          <div className="w-full lg:w-1/2 flex justify-center">
+          <div className="w-full lg:w-1/2 flex justify-end">
             <img
               src="src/assets/imgs/HighLightImage (2).svg"
               alt="Logo Light"
@@ -40,11 +50,13 @@ export default function Root() {
             />
           </div>
         </nav>
+        <hr className="border-t-4 border-secondary-default dark:hidden " />
       </header>
-
-      <main className="max-w-7xl mx-auto px-4">
-        <Outlet />
-      </main>
+      <div className=" bg-white dark:bg-dark">
+        <main className="max-w-7xl mx-auto px-4 bg-white dark:bg-dark">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }
