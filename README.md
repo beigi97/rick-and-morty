@@ -2,6 +2,12 @@
 
 Eine interaktive Webanwendung mit React, die über die offizielle API Informationen zu den Charakteren, Episoden und Orten von Rick and Morty anzeigt
 
+`Main Page Image `
+![Demo](src/assets/imgs/home-top.png)
+![Demo](src/assets/imgs/home-bottom.png)
+
+## API Quellen
+
 > `https://rickandmortyapi.com/api/character`
 
 > `https://rickandmortyapi.com/api/location`
@@ -23,6 +29,15 @@ Eine interaktive Webanwendung mit React, die über die offizielle API Informatio
 - Support for Dark Mode
 
 - Custom 404 error page for invalid or unknown routes
+
+`Details Page`
+![Demo](src/assets/imgs/details.png)
+
+`Pagination Page`
+![Demo](src/assets/imgs/pagination.png)
+
+`404 Page`
+![Demo](src/assets/imgs/404-dark.png)
 
 ### Technologies Used
 
